@@ -31,7 +31,6 @@ class _LoginPageState extends State<LoginPage> {
             ? screenWidth / 3
             : screenWidth - 50;
     int flex = 2;
-    double inputPadding = 10;
     return Scaffold(
       backgroundColor: Colors.lightGreen,
       body: Center(
@@ -89,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                         decoration: InputDecoration(
                             hintText: "Phone Number",
                             fillColor: Colors.white,
-                            contentPadding: EdgeInsets.only(top: 15,bottom: 15,left: 13,right: 15),
+                            contentPadding: const EdgeInsets.only(top: 15,bottom: 15,left: 13,right: 13),
                             isDense: true,
                             hintStyle: const TextStyle(fontFamily: "Ysabeau",fontSize: 12),
                             border: OutlineInputBorder(
@@ -125,7 +124,7 @@ class _LoginPageState extends State<LoginPage> {
                         decoration: InputDecoration(
                           hintText: "Password",
                           fillColor: Colors.white,
-                          contentPadding: EdgeInsets.only(top: 10,bottom: 10,left: 13,right: 15),
+                          contentPadding: const EdgeInsets.only(top: 10,bottom: 10,left: 13,right: 15),
                           hintStyle: const TextStyle(fontFamily: "Ysabeau",fontSize: 12),
                           suffixIcon: IconButton(
                             icon: Icon(isObscured

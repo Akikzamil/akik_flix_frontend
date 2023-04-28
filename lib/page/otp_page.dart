@@ -1,6 +1,7 @@
 import 'package:akik_drive_frontend/page/home_page.dart';
 import 'package:akik_drive_frontend/page/login_page.dart';
 import 'package:akik_drive_frontend/page/sign_up_page.dart';
+import 'package:akik_drive_frontend/util/screen_size.dart';
 import 'package:flutter/material.dart';
 
 class OtpPage extends StatefulWidget {
@@ -21,6 +22,16 @@ class OtpPage extends StatefulWidget {
 class _OtpPageState extends State<OtpPage> {
   @override
   Widget build(BuildContext context) {
+    ScreenSize screenSize = ScreenSize(context: context);
+    double screenWidth = screenSize.getScreenWidth();
+    bool isTablet = screenSize.isTablet();
+    bool isFullScreen = screenSize.isFullScreen();
+    double generalWidth = isFullScreen
+        ? screenWidth / 4
+        : isTablet
+        ? screenWidth / 3
+        : screenWidth - 50;
+
     return Scaffold(
       backgroundColor: Colors.lightGreen,
       body: Center(
@@ -38,7 +49,7 @@ class _OtpPageState extends State<OtpPage> {
               height: 20,
             ),
             SizedBox(
-              width: 300,
+              width: generalWidth,
               child: TextFormField(
                 cursorColor: Colors.grey,
                 cursorWidth: 0.5,
@@ -48,7 +59,9 @@ class _OtpPageState extends State<OtpPage> {
                 decoration: InputDecoration(
                   hintText: "Code",
                   fillColor: Colors.white,
-                  hintStyle: const TextStyle(fontFamily: "Ysabeau"),
+                  contentPadding: const EdgeInsets.only(top: 15,bottom: 15,left: 13,right: 13),
+                  isDense: true,
+                  hintStyle: const TextStyle(fontFamily: "Ysabeau",fontSize: 12),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(40),
                     gapPadding: 20,
@@ -61,12 +74,11 @@ class _OtpPageState extends State<OtpPage> {
               height: 10,
             ),
             SizedBox(
-              width: 420,
+              width: generalWidth,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
-                      width: 150,
+                  Expanded(
                       child: TextButton(
                         onPressed: () => Navigator.of(context).push(
                             MaterialPageRoute(
@@ -79,8 +91,7 @@ class _OtpPageState extends State<OtpPage> {
                               color: Colors.white, fontFamily: "Ysabeau"),
                         ),
                       )),
-                  SizedBox(
-                    width: 150,
+                  Expanded(
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.pushAndRemoveUntil(

@@ -16,7 +16,5 @@ class Login{
     }catch(e){
       print(e);
     }
-
-
   }
 }
