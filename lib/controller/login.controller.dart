@@ -1,6 +1,6 @@
 import 'package:akik_drive_frontend/model/user.dart';
 import 'package:akik_drive_frontend/page/home_page.dart';
-import 'package:akik_drive_frontend/service/auth.dart';
+import 'package:akik_drive_frontend/service/auth.service.dart';
 import 'package:flutter/material.dart';
 
 class Login{

@@ -1,4 +1,4 @@
-import 'package:akik_drive_frontend/controller/login_controller.dart';
+import 'package:akik_drive_frontend/controller/login.controller.dart';
 import 'package:akik_drive_frontend/util/screen_size.dart';
 import 'package:akik_drive_frontend/util/validation.dart';
 import 'package:akik_drive_frontend/page/sign_up_page.dart';

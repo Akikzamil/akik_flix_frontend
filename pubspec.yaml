@@ -38,6 +38,9 @@ dependencies:
   country_code_picker: ^3.0.0
   http: ^0.13.5
   flutter_dotenv: ^5.0.2
+  shared_preferences: ^2.1.0
+  flutter_riverpod: ^2.3.6
+  lecle_yoyo_player: ^0.0.5+2
 
 dev_dependencies:
   flutter_test:
